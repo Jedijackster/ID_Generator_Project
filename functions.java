@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 
@@ -40,7 +39,7 @@ public class functions {
         return arr;
     }
 
-    static void print_info(Object[] arr){
+    static void print_info(Object[] arr){ //unused as of rn,
         for(int i=0; i<arr.length; ){
             switch(i+1){
                 case 1: 
@@ -55,8 +54,6 @@ public class functions {
             }
             System.out.print(arr[i]);
         }
-        
-
     }
     
     
@@ -79,8 +76,8 @@ public class functions {
         return year;
     }
 
-    // function that houses all the questions and returns their answers as ???
-    static int maj_dep(){ // not used rn
+    // function that houses all the questions and returns their answers as int
+    static int maj_dep(){ // not used rn, probably should cut it out
         Scanner temp_store = new Scanner(System.in);
         System.out.println("Here are your input options:\n1) Engineering\n2) Liberal Arts\n3) Science");
         System.out.println("Give your major department: ");
@@ -160,7 +157,7 @@ public class functions {
             dig5=0;
         }
 
-        //sOrf,0,0,dig2=year,dig3=grad/und,maj_dep,major,sex,
+        //sOrf,0,0,dig4=year,dig5=grad/und,maj_dep,major,sex,
         int intarray[] = {sOrf,0,0,dig4,dig5,stval1,stval2,sex,age_det(age)};
         temp_store.close();   
         return intarray;
