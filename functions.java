@@ -56,16 +56,16 @@ public class functions {
     }
     
     
-    static int age_det(int age){
-        int num=0;
-        // int i=0;
-        // do{
-        //     i++;
-        // }while(i!=age);
-        // num = i/10;
-        num = age %10;
-        return num;
-    }
+    // static int age_det(int age){
+    //     int num=0;
+    //     // int i=0;
+    //     // do{
+    //     //     i++;
+    //     // }while(i!=age);
+    //     // num = i/10;
+    //     num = age %10;
+    //     return num;
+    // }
 
     static int year() {
         Scanner temp_store = new Scanner(System.in);
@@ -169,8 +169,8 @@ public class functions {
         id += stval2;
         id = id * 10;
         id += sex;
-        id = id * 10;
-        id += age_det(age);
+        id = id * 100;
+        id += age;
         temp_store.close();   
         return id;
     }
