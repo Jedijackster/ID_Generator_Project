@@ -1,6 +1,5 @@
 import java.util.Scanner;
-
-
+import java.util.ArrayList;
 public class functions {
     static void id_tran(int[] id){ //translates id# values into strings for use in classes
         
@@ -59,11 +58,12 @@ public class functions {
     
     static int age_det(int age){
         int num=0;
-        int i=0;
-        do{
-            i++;
-        }while(i!=age);
-        num = i/10;
+        // int i=0;
+        // do{
+        //     i++;
+        // }while(i!=age);
+        // num = i/10;
+        num = age %10;
         return num;
     }
 
@@ -109,7 +109,7 @@ public class functions {
         return majspec;
     }
 
-    static int[] id_gen(int sOrf,int sex,int age) { 
+    static int id_gen(int sOrf,int sex,int age) { 
         Scanner temp_store = new Scanner(System.in);
         int stval1=0, stval2=0; 
         
@@ -158,8 +158,20 @@ public class functions {
         }
 
         //sOrf,0,0,dig4=year,dig5=grad/und,maj_dep,major,sex,
-        int intarray[] = {sOrf,0,0,dig4,dig5,stval1,stval2,sex,age_det(age)};
+        //int intarray[] = {sOrf,0,0,dig4,dig5,stval1,stval2,sex,age_det(age)};
+        int id = sOrf*1000;
+        id += dig4;
+        id = id*10;
+        id += dig5;
+        id = id * 10;
+        id += stval1;
+        id = id * 10;
+        id += stval2;
+        id = id * 10;
+        id += sex;
+        id = id * 10;
+        id += age_det(age);
         temp_store.close();   
-        return intarray;
+        return id;
     }
 }

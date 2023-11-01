@@ -24,7 +24,7 @@ public class Main {
         Scanner temp_store = new Scanner(System.in);
         int sOrf = 0, sex = 0;
         int ver =0;
-        int[] idnum ={};
+        int idnum =0;
 
         System.out.println("Give your name: ");
         String name = temp_store.nextLine(); 
@@ -74,10 +74,8 @@ public class Main {
         }
         
         System.out.println("\nName:"+name+"\nAge:"+age);
-        System.out.print("\nID #: ");
-        for (int i = 0; i< idnum.length; i++) { //Prints out each element of the id array
-            System.out.print(idnum[i]);
-        }
+        System.out.print("\nID #: "+idnum);
+        
         //inp_print(name,age,maj); 
         
         
