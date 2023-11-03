@@ -1,36 +1,25 @@
 
 import java.util.Scanner;
-import functions;
     
-    class member{
-        public String name;
-        public int age;
-        public int sex;
 
-        class student extends member{
-            public int majdep;
-            public int majfoc;
-            public int year;
-            public int gradOrund;
-        }
-
-        class faculty extends member{
-            public int job;
-        }   
-    }
 
 public class Main {
     public static void main(String[] args) throws Exception{ 
         Scanner temp_store = new Scanner(System.in);
         int sOrf = 0, sex = 0;
         int ver =0;
-        int idnum =0;
-
+        int age = 0;
         System.out.println("Give your name: ");
         String name = temp_store.nextLine(); 
 
         System.out.println("Give your age: ");
-        int age = temp_store.nextInt(); 
+        age = temp_store.nextInt(); 
+        while(age <0)
+        {
+            System.out.println("Invalid Input, Try Again");
+            age = temp_store.nextInt(); 
+        }
+        
         
         ver =0;
         do{
@@ -39,6 +28,7 @@ public class Main {
             sex = temp_store.nextInt();
             if (sex==1){
                 ver =1;
+
             }else if(sex==2){
                 ver =1;
             }else {continue;}
@@ -56,25 +46,38 @@ public class Main {
             }else {continue;}
         }while(ver!=1);
         // Student or faculty var
-        
-    
-        member indiv1 = new member();
         if (sOrf==1){
-            member.student id1 = indiv1.new student();
+            student id1 = new student();
             id1.name = name;
             id1.age = age;
-            id1.sex = sex;
-            idnum = functions.id_gen(sOrf,id1.sex,id1.age); // Takes inputs for id# generator 
+            if(sex == 1)
+            {
+                id1.sex ="Male";
+            }
+            else
+            {
+                id1.sex= "Female";
+            }
+            id1.id = functions.id_gen_student(sOrf,sex,id1.age, id1); // Takes inputs for id# generator 
+            id1.display();
         } else if (sOrf==2){
-            member.faculty id1 = indiv1.new faculty();
+            faculty id1 = new faculty();
             id1.name = name;
             id1.age = age;
-            id1.sex = sex;
-            idnum = functions.id_gen(sOrf,id1.sex,id1.age); // Takes inputs for id# generator
+            if(sex == 1)
+            {
+                id1.sex ="Male";
+            }
+            else
+            {
+                id1.sex= "Female";
+            }
+            id1.id = functions.id_gen_staff(sOrf,sex,age,id1); // Takes inputs for id# generator
+            id1.display();
         }
         
         System.out.println("\nName:"+name+"\nAge:"+age);
-        System.out.print("\nID #: "+idnum);
+        
         
         //inp_print(name,age,maj); 
         
