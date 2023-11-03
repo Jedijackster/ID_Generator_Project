@@ -4,8 +4,9 @@ public class member{
     public int age;
     public String sex;
     public int id;
-    public void display() {
-    	System.out.print(name+", "+age+", "+sex+", "+id);
+    public String createDisplay() {
+    	String returnString= (name+", "+age+", "+sex+", "+id);
+        return returnString;
     }
 
  

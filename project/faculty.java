@@ -1,8 +1,12 @@
 package project;
 public class faculty extends member{
     public String job;
-    public void display() {
-    	super.display();
-    	System.out.println(", "+job);;
+    public String createDisplay() {
+        String returnString = super.createDisplay() + ", "+job;
+        return returnString;
+    }
+    public void display()
+    {
+        System.out.println(createDisplay());
     }
 }  

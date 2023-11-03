@@ -1,6 +1,8 @@
 package project;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.File;
+import java.io.IOException;
 public class functions {
     static void id_tran(int[] id){ //translates id# values into strings for use in classes
         
@@ -8,13 +10,15 @@ public class functions {
     
     // function that returns an array of objects that has first part of user info
     // will modify code to write object to file
-    static Object[] info_arr1(String name, int age,int sex, int sOrf){
-        Object[] ret ={};
-        if(name != null && !name.isEmpty()){ret[0] = name;}
-        if((age>0)&&(age<100)){ret[1]=age;}
-        if(sex==1){ret[2]="Male";}  else if(sex==2){ret[2]="Female";}
-        if(sOrf==1){ret[3]="Student";} else if(sOrf==2){ret[3]="Staff";}
-        return ret;
+    void storeStudent(student object){
+        try{
+            File database = new File("database.txt");
+            database.createNewFile();
+            FileWriter Writer = new FileWriter("database.txt");
+            String data = object.createDisplay();
+            Writer.write(data);
+        }
+
     }
 // Left off here - tried to store user info as printable array of objects 
 // Reevaluate because you will need to replace with user input from buttons and text boxes anyway
