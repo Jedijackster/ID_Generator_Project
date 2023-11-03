@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.IOException;
+import java.io.FileWriter;
 public class functions {
     static void id_tran(int[] id){ //translates id# values into strings for use in classes
         
@@ -16,7 +17,27 @@ public class functions {
             database.createNewFile();
             FileWriter Writer = new FileWriter("database.txt");
             String data = object.createDisplay();
-            Writer.write(data);
+            Writer.append(data);
+            Writer.close();
+        }
+        catch(IOException e){
+            System.out.println("Could not open database.txt");
+
+        }
+
+    }
+    void storeFaculty(faculty object){
+        try{
+            File database = new File("database.txt");
+            database.createNewFile();
+            FileWriter Writer = new FileWriter("database.txt");
+            String data = object.createDisplay();
+            Writer.append(data);
+            Writer.close();
+        }
+        catch(IOException e){
+            System.out.println("Could not open database.txt");
+
         }
 
     }
