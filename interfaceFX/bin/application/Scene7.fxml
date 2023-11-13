@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This fxml file houses the created ID card for the user to view-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.scene7Controller">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="483.0" layoutX="-6.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="510.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.24038461538461542" startX="0.9519230769230769" startY="0.625">
+               <stops>
+                  <Stop color="#d7feff" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Line endX="429.0" layoutX="105.0" layoutY="49.0" opacity="0.7" startX="-141.0" strokeLineCap="BUTT" strokeWidth="5.0">
+         <stroke>
+            <LinearGradient endX="0.9375000000000001" endY="0.6634615384615384" startX="0.7884615384615384" startY="0.3125">
+               <stops>
+                  <Stop color="#2c9ab8" />
+                  <Stop color="#cfdfe3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <Text fill="#41b4d7" layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the ID search screen please answer the questions below with the relevant information" wrappingWidth="476.64599609375">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="next_button" layoutX="430.0" layoutY="434.0" mnemonicParsing="false" onAction="#switchToIDscene" prefHeight="27.0" prefWidth="56.0" text="next" />
+      <Button fx:id="return_button" layoutX="14.0" layoutY="434.0" mnemonicParsing="false" onAction="#switchToScene1" text="Return to menu" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="33.0" layoutX="8.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="238.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="9.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="214.0" />
+      <Label fx:id="False_label" layoutX="176.0" layoutY="438.0" textFill="RED">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Text layoutX="14.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter in the ID you want to search for:" />
+      <TextField fx:id="search_box" layoutX="14.0" layoutY="91.0" prefHeight="27.0" prefWidth="223.0" />
+   </children>
+</AnchorPane>

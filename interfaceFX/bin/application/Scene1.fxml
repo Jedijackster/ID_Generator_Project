@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This fxml file is the startup for the application-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.scene1Controller">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="483.0" layoutX="-6.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="510.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.24038461538461542" startX="0.9519230769230769" startY="0.625">
+               <stops>
+                  <Stop color="#d7feff" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ButtonBar layoutX="324.0" layoutY="94.0" prefHeight="40.0" prefWidth="111.0" />
+    <Button fx:id="student_button" defaultButton="true" layoutX="318.0" layoutY="94.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="40.0" prefWidth="143.0" text="Create ID student" textFill="#3a9ad6">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Line endX="429.0" layoutX="105.0" layoutY="49.0" startX="-141.0" strokeLineCap="BUTT" strokeWidth="5.0">
+         <stroke>
+            <LinearGradient endX="0.9375000000000001" endY="0.6634615384615384" startX="0.7884615384615384" startY="0.3125">
+               <stops>
+                  <Stop color="#2c9ab8" />
+                  <Stop color="#cfdfe3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <Text layoutX="324.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Options:" wrappingWidth="162.21630859375">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="0.5625" endY="0.46634615384615385" startX="0.5576923076923076" startY="0.23076923076923078">
+               <stops>
+                  <Stop color="#87bdd6" />
+                  <Stop color="#3687c9" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="14.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Generator">
+         <font>
+            <Font size="34.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="0.7548076923076924" endY="0.6778846153846153" startX="0.7499999999999999" startY="0.40384615384615374">
+               <stops>
+                  <Stop color="#6bd4ee" />
+                  <Stop color="#4582bf" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Text layoutX="318.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Brought to you by: Java Guru's">
+         <fill>
+            <LinearGradient endX="0.8461538461538461" endY="0.07692307692307687" startX="0.8413461538461539" startY="0.5769230769230771">
+               <stops>
+                  <Stop color="#3091d7" />
+                  <Stop color="#3091d7" offset="0.007518796992481203" />
+                  <Stop color="#c2e1eb" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Button fx:id="faculty_button" defaultButton="true" layoutX="318.0" layoutY="145.0" mnemonicParsing="false" onAction="#switchToScene4" prefHeight="40.0" prefWidth="143.0" text="Create ID faculty" textFill="#3a9ad6">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="image_button" defaultButton="true" layoutX="423.0" layoutY="539.0" mnemonicParsing="false" onAction="#switchToScene5" prefHeight="40.0" prefWidth="143.0" text="ID Card Image" textFill="#3a9ad6">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="search_button" defaultButton="true" layoutX="423.0" layoutY="490.0" mnemonicParsing="false" onAction="#switchToScene7" prefHeight="40.0" prefWidth="143.0" text="ID Search" textFill="#3a9ad6">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

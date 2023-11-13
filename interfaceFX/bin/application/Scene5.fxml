@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This fxml file is the image dropper for the ID card-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.scene6Controller">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="483.0" layoutX="-6.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="510.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.24038461538461542" startX="0.9519230769230769" startY="0.625">
+               <stops>
+                  <Stop color="#d7feff" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c2e1ff" height="244.0" layoutX="112.0" layoutY="120.0" opacity="0.75" stroke="#80d4ff" strokeType="INSIDE" strokeWidth="1.5" width="250.0" />
+      <ButtonBar layoutX="324.0" layoutY="94.0" prefHeight="40.0" prefWidth="111.0" />
+      <Line endX="429.0" layoutX="105.0" layoutY="49.0" startX="-141.0" strokeLineCap="BUTT" strokeWidth="5.0">
+         <stroke>
+            <LinearGradient endX="0.9375000000000001" endY="0.6634615384615384" startX="0.7884615384615384" startY="0.3125">
+               <stops>
+                  <Stop color="#2c9ab8" />
+                  <Stop color="#cfdfe3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <Text layoutX="14.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Image Selector">
+         <font>
+            <Font size="34.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="0.7548076923076924" endY="0.6778846153846153" startX="0.7499999999999999" startY="0.40384615384615374">
+               <stops>
+                  <Stop color="#6bd4ee" />
+                  <Stop color="#4582bf" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <ImageView fx:id="dropbox_imageview" fitHeight="232.0" fitWidth="238.0" layoutX="121.0" layoutY="126.0" onDragDropped="#handleDrop" onDragOver="#handleDragOver" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@profil_blank.png" />
+         </image></ImageView>
+      <Text layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In order to add an image of yourself to your ID please drop it as a .png file into the box below. When you are done click return to menu in the bottom right." wrappingWidth="445.0000036880374">
+         <fill>
+            <LinearGradient endX="0.8461538461538461" endY="1.0" startX="0.8413461538461539" startY="0.7403846153846155">
+               <stops>
+                  <Stop color="#3091d7" />
+                  <Stop color="#3091d7" offset="0.007518796992481203" />
+                  <Stop color="#c2e1eb" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <Button layoutX="380.0" layoutY="434.0" mnemonicParsing="false" onAction="#switchToScene1" text="Return to Menu" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This fxml file houses the created ID card for the user to view-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.scene6Controller">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="483.0" layoutX="-6.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="510.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="0.24038461538461542" startX="0.9519230769230769" startY="0.625">
+               <stops>
+                  <Stop color="#d7feff" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Line endX="429.0" layoutX="105.0" layoutY="49.0" opacity="0.7" startX="-141.0" strokeLineCap="BUTT" strokeWidth="5.0">
+         <stroke>
+            <LinearGradient endX="0.9375000000000001" endY="0.6634615384615384" startX="0.7884615384615384" startY="0.3125">
+               <stops>
+                  <Stop color="#2c9ab8" />
+                  <Stop color="#cfdfe3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <Text fill="#41b4d7" layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your generated ID with your info should be below" wrappingWidth="476.64599609375">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="next_button" layoutX="430.0" layoutY="434.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="56.0" text="next" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fc7fc" height="274.0" layoutX="14.0" layoutY="69.0" stroke="#fcfcfc" strokeType="INSIDE" width="465.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="227.0" layoutY="119.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="236.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="227.0" layoutY="179.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="236.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="228.0" layoutY="89.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="48.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="229.0" layoutY="149.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="48.0" />
+      <Label fx:id="name_label" layoutX="237.0" layoutY="124.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="id_label" layoutX="237.0" layoutY="184.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Text layoutX="234.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+      <Text layoutX="240.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID #:" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="219.0" layoutX="24.0" layoutY="89.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="197.0" />
+      <Button fx:id="return_button" layoutX="14.0" layoutY="434.0" mnemonicParsing="false" onAction="#switchToScene1" text="Return to menu" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="227.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="236.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="229.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="48.0" />
+      <Label fx:id="maj_label" layoutX="237.0" layoutY="243.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="dropbox_imageview" fitHeight="182.0" fitWidth="182.0" layoutX="32.0" layoutY="102.0" onDragDropped="#handleDrop" onDragOver="#handleDragOver" opacity="0.75" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@profil_blank.png" />
+         </image>
+      </ImageView>
+      <Text fill="#41b4d7" layoutX="14.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you would like an image added onto your ID card then drag your desired image as a .png file over the blank profile box on the card and it will be placed in the portrait on the card." wrappingWidth="476.64599609375">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Label fx:id="majOrjob_label" layoutX="233.0" layoutY="213.0" text="Label">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
