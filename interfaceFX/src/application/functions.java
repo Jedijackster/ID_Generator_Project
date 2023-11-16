@@ -16,11 +16,13 @@ public class functions {
     static void storeStudent(student object){
         try{
             File database = new File("database.txt");
-            database.createNewFile();
-            FileWriter Writer = new FileWriter("database.txt");
+            FileWriter Writer = new FileWriter(database, true);
             String data = object.createDisplay();
-            Writer.append(data);
+            Writer.write(data);
+            String data2 = object.createDisplay2();
+            Writer.write(data2);
             Writer.close();
+           
         }
         catch(IOException e){
             System.out.println("Could not open database.txt");
@@ -30,11 +32,12 @@ public class functions {
     }
     static void storeFaculty(faculty object){
         try{
-            File database = new File("database.txt");
-            database.createNewFile();
-            FileWriter Writer = new FileWriter("database.txt");
+        	File database = new File("database.txt");
+            FileWriter Writer = new FileWriter(database, true);
             String data = object.createDisplay();
-            Writer.append(data);
+            Writer.write(data);
+            String data2 = object.createDisplay2();
+            Writer.write(data2);
             Writer.close();
         }
         catch(IOException e){
@@ -44,7 +47,7 @@ public class functions {
 
     }
 
-    public static int id_gen_staff(int sOrf,int sex,int age,String job, int years,faculty object) { 
+    public static int id_gen_staff(int sOrf,int sex,int age,String job, int years,faculty object) throws IOException { 
         
         int dig5 = job_search(object);
         //sOrf,0,0,dig4&dig5=job,0,years,years,sex,age,age
@@ -58,10 +61,20 @@ public class functions {
         id = id * 100;
         id += age;     
            
+        int i =1;
+        String idString = Integer.toString(id);
+        while (getId(idString)!=0) {
+        	id+= (i*10000000);
+        	i++;
+        	idString = Integer.toString(id);
+        }
+        
         return id;
     }
+ 
     
-    static int id_gen_student(int sOrf,int sex,int age,int gradOrund, String department,student object) { 
+    
+    static int id_gen_student(int sOrf,int sex,int age,int gradOrund, String department,student object) throws IOException { 
         
         int dig4=0,dig5=0;
         /* maj_dep calls dep_search that takes String input from combobox on scene3 
@@ -101,7 +114,49 @@ public class functions {
         id = id * 100;
         id += age;
         
+        int i =1;
+        boolean value=false;
+        String idString = Integer.toString(id);
+        if (idExist(idString)==true) {
+        	do {
+            	id+= (i*100000000);
+            	i++;
+            	idString = Integer.toString(id);
+            	if(idExist(idString)==false){
+            		value=true;
+            		break;
+            	}
+            }while (value==false); 
+        }
+        
+        
         return id;
+    }
+    
+    public static boolean idExist(String ID) throws IOException {
+    	BufferedReader reader1 = new BufferedReader(new FileReader("database.txt"));  
+    	String line1 = reader1.readLine();   
+    	int lineNum = 1;  
+    	boolean areEqual = false;
+    	while (line1 != null) {
+    		if (line1.equals(ID) || line1.equalsIgnoreCase(ID)) {
+    		    areEqual = true; 
+    		    break;
+    		}
+    		line1 = reader1.readLine();
+    	    lineNum++;
+    	}
+    	if(areEqual==true){
+    	    System.out.println("This is the ID you're looking for");
+    	    ID = line1;
+    	    reader1.close();
+       	    return true;
+    	} else {
+    		System.out.println(ID);
+    	    reader1.close();
+        	return false;
+        	
+    	}
     }
     
     public static int getId(String ID) throws IOException {

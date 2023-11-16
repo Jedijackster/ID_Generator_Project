@@ -75,7 +75,6 @@ public class scene6Controller {
 	
 	
     
-	// Scene 5 controller 
 	@FXML
 	public void handleDragOver(DragEvent event) {
 		if(event.getDragboard().hasFiles()) {

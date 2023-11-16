@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- This fxml file houses the created ID card for the user to view-->
+<!-- This fxml file is openned and used when the user enters a valid student id in the scene7 search -->
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>

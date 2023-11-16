@@ -7,11 +7,14 @@ public class member{
     public int sex;
     public int id;
 	public int sOrf;
-    // fix createDisplay so sex is converted from int to String for returnString.
     public String createDisplay() {
-    	String returnString= (id+" \n"+name+"\n ");
+    	String idString= Integer.toString(id);
+    	String returnString = ("\n"+idString);
         return returnString;
     }
-
+    public String createDisplay2() {
+    	String returnString2= ("\n"+first_name+" "+last_name);
+        return returnString2;
+    }
  
 }

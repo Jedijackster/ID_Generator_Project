@@ -29,7 +29,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
-public class scene7Controller implements Initializable{
+public class scene7Controller {
 	@FXML
 	public Stage stage;
 	@FXML
@@ -84,12 +84,9 @@ public class scene7Controller implements Initializable{
 		if (idValue!=0) {
 			int sOrf = (idValue/1000000000);
 			if (sOrf==1) {
-				root = FXMLLoader.load(getClass().getResource("Scene8.fxml"));
-				stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-				
 				String name = functions.getName(idInput);
 				System.getProperty("MY_STRING1", name);
-				Name_label.setText("Jack Yohn");
+				Name_label.setText(name);
 				idTranslate(idValue);
 				ID_label.setText(idInput);
 				String ageString = System.getProperty("MY_INT1");
@@ -103,9 +100,8 @@ public class scene7Controller implements Initializable{
 				String academicYearString = System.getProperty("MY_INT5");
 				academicYear_label.setText(academicYearString);
 				
-				scene = new Scene(root);
-				stage.setScene(scene);
-				stage.show();
+				switchToScene8(event);
+
 			}else if(sOrf==2) {
 				switchToScene9(event);
 				String name = functions.getName(idInput);
@@ -196,22 +192,6 @@ public class scene7Controller implements Initializable{
 	public void invalid_category(ActionEvent event) throws IOException{
 		
 	}
-	
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-        Name_label.setText("Initial Text");
-        ID_label.setText("Initial Text");
-        Sex_label.setText("Initial Text");
-        Age_label.setText("Initial Text");
-        Department_label.setText("Initial Text");
-        gradOrund_label.setText("Initial Text");
-        academicYear_label.setText("Initial Text");
-        Job_label.setText("Initial Text");
-        yearsWorked_label.setText("Initial Text");
-	}
-	
-	
 	
 	
 

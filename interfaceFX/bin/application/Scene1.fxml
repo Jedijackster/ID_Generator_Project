@@ -87,7 +87,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="search_button" defaultButton="true" layoutX="423.0" layoutY="490.0" mnemonicParsing="false" onAction="#switchToScene7" prefHeight="40.0" prefWidth="143.0" text="ID Search" textFill="#3a9ad6">
+      <Button fx:id="search_button" defaultButton="true" layoutX="318.0" layoutY="202.0" mnemonicParsing="false" onAction="#switchToScene7" prefHeight="40.0" prefWidth="143.0" text="ID Search" textFill="#3a9ad6">
          <font>
             <Font size="14.0" />
          </font>

@@ -8,9 +8,9 @@ public class student extends member{
        /* public String createDisplay() {
         	String returnString = super.createDisplay() +majdep+", "+majfoc+", "+academyear+", "+gradOrund;
         	return returnString;
-        }*/
+        }
         public void display()
         {
             System.out.println(createDisplay());
-        }
+        }*/
     }
