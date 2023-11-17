@@ -58,6 +58,8 @@ public class functions {
 		id = id *10;
 		id += ran.nextInt(10);
 		id = id * 10;
+		id += ran.nextInt(10);
+		id = id * 10;
         id += dig5;
         id = id * 10;
         id = id * 10;
