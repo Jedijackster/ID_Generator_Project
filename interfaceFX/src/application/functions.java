@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.FileWriter;
+import java.util.Random;
 
 public class functions {
 
@@ -50,8 +51,13 @@ public class functions {
     public static int id_gen_staff(int sOrf,int sex,int age,String job, int years,faculty object) throws IOException { 
         
         int dig5 = job_search(object);
+		Random ran = new Random();
         //sOrf,0,0,dig4&dig5=job,0,years,years,sex,age,age
-        int id = sOrf*1000;
+        int id = sOrf*10;
+		id += ran.nextInt(10);
+		id = id *10;
+		id += ran.nextInt(10);
+		id = id * 10;
         id += dig5;
         id = id * 10;
         id = id * 10;
