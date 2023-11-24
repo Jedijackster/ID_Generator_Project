@@ -34,7 +34,7 @@
             </LinearGradient>
          </stroke>
       </Line>
-      <Text fill="#41b4d7" layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Below is the information for the student that exists in the database " wrappingWidth="476.64599609375">
+      <Text fill="#41b4d7" layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Below is the information for the faculty that exists in the database " wrappingWidth="476.64599609375">
          <font>
             <Font size="14.0" />
          </font>
@@ -51,12 +51,12 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="249.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="56.0" />
       <Text layoutX="254.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID #:" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="33.0" layoutX="248.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="215.0" />
-      <Label fx:id="Name_label" layoutX="14.0" layoutY="95.0" text="Label">
+      <Label fx:id="Name_labelFaculty" layoutX="14.0" layoutY="95.0" text="Label">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="ID_label" layoutX="254.0" layoutY="95.0" text="Label">
+      <Label fx:id="ID_labelFaculty" layoutX="254.0" layoutY="95.0" text="Label">
          <font>
             <Font size="15.0" />
          </font>
@@ -80,7 +80,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="33.0" layoutX="8.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="215.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="9.0" layoutY="128.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="56.0" />
       <Text layoutX="14.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex:" />
-      <Label fx:id="Sex_label" layoutX="14.0" layoutY="165.0" text="Label">
+      <Label fx:id="Sex_labelFaculty" layoutX="14.0" layoutY="165.0" text="Label">
          <font>
             <Font size="15.0" />
          </font>
@@ -88,7 +88,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="33.0" layoutX="248.0" layoutY="158.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="215.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="249.0" layoutY="128.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="56.0" />
       <Text layoutX="254.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age:" />
-      <Label fx:id="Age_label" layoutX="254.0" layoutY="165.0" text="Label">
+      <Label fx:id="Age_labelFaculty" layoutX="254.0" layoutY="165.0" text="Label">
          <font>
             <Font size="15.0" />
          </font>

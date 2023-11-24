@@ -16,7 +16,8 @@ public class functions {
     // Stores member data to database.txt
     static void storeStudent(student object){
         try{
-            File database = new File("database.txt");
+        	
+        	File database = new File("database.txt");
             FileWriter Writer = new FileWriter(database, true);
             String data = object.createDisplay();
             Writer.write(data);
@@ -53,14 +54,8 @@ public class functions {
         int dig5 = job_search(object);
 		Random ran = new Random();
         //sOrf,0,0,dig4&dig5=job,0,years,years,sex,age,age
-        int id = sOrf*10;
-		id += ran.nextInt(10);
-		id = id *10;
-		id += ran.nextInt(10);
-		id = id * 10;
-		id += ran.nextInt(10);
-		id = id * 10;
-        id += dig5;
+        int id = sOrf*10000;
+		id += dig5;
         id = id * 10;
         id = id * 10;
         id += years;
@@ -68,13 +63,20 @@ public class functions {
         id += sex;
         id = id * 100;
         id += age;     
-           
+        
         int i =1;
+        boolean value=false;
         String idString = Integer.toString(id);
-        while (getId(idString)!=0) {
-        	id+= (i*10000000);
-        	i++;
-        	idString = Integer.toString(id);
+        if (idExist(idString)==true) {
+        	do {
+            	id+= (i*100000000);
+            	i++;
+            	idString = Integer.toString(id);
+            	if(idExist(idString)==false){
+            		value=true;
+            		break;
+            	}
+            }while (value==false); 
         }
         
         return id;
@@ -127,7 +129,7 @@ public class functions {
         String idString = Integer.toString(id);
         if (idExist(idString)==true) {
         	do {
-            	id+= (i*100000000);
+            	id+= (i*10000000);
             	i++;
             	idString = Integer.toString(id);
             	if(idExist(idString)==false){
@@ -182,11 +184,11 @@ public class functions {
     	    lineNum++;
     	}
     	if(areEqual==true){
-    	    System.out.println("This is the ID you're looking for");
+    	    //System.out.println("This is the ID you're looking for");
     	    ID = line1;
     	} else {
     		
-    	    System.out.println("This is not the ID you're looking for");
+    	    //System.out.println("This is not the ID you're looking for");
     	    
     	}
     	reader1.close();
@@ -200,32 +202,32 @@ public class functions {
     	String name="";
     	String line1 = reader1.readLine();   
     	int lineNum = 1;  
-    	boolean areEqual = true;
-    	while (line1 != null || ID != null){
-    		if(line1 == ID){
-    			areEqual = false; 
-    	        break;
-    		} else if(! line1.equalsIgnoreCase(ID)) {
-    			areEqual = false; 
-    	        break;
-    	    }
-    	    line1 = reader1.readLine();  
+    	boolean areEqual = false;
+    	while (line1 != null) {
+    		if (line1.equals(ID) || line1.equalsIgnoreCase(ID)) {
+    		    areEqual = true; 
+    		    break;
+    		}
+    		line1 = reader1.readLine();
     	    lineNum++;
     	}
-    	if(areEqual){
-    	    System.out.println("This is the ID you're looking for");
-    	    name = Files.readAllLines(Paths.get("database.txt")).get(lineNum+1);
+    	if(areEqual==true){
+    		lineNum++;
+    		name = reader1.readLine();
+    	    //System.out.println("This is the Name you're looking for");
+    	    
     	    
     	} else {
     		
-    	    System.out.println("This is not the ID you're looking for");
+    	    //System.out.println("This is not the Name you're looking for");
     	    
     		
     	}
     	reader1.close();
+    	System.out.println(name);
     	return name; 
     }
-    
+    // NOT IN USE
     public static String getMaj(String ID) throws IOException{
     	BufferedReader reader1 = new BufferedReader(new FileReader("database.txt"));  
     	String major="";
@@ -244,12 +246,12 @@ public class functions {
     	    lineNum++;
     	}
     	if(areEqual){
-    	    System.out.println("This is the ID you're looking for");
+    	    //System.out.println("This is the Major you're looking for");
     	    major = Files.readAllLines(Paths.get("database.txt")).get(lineNum+2);
     	    
     	} else {
     		
-    	    System.out.println("This is not the ID you're looking for");
+    	    //System.out.println("This is not the Major you're looking for");
     	    
     	}
     	reader1.close();

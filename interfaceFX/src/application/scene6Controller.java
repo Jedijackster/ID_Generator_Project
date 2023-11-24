@@ -79,6 +79,7 @@ public class scene6Controller {
 	public void handleDragOver(DragEvent event) {
 		if(event.getDragboard().hasFiles()) {
 			event.acceptTransferModes(TransferMode.ANY);
+			// change 
 		}
 	}
 	

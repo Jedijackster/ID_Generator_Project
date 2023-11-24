@@ -41,7 +41,6 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Button fx:id="next_button" layoutX="430.0" layoutY="434.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="56.0" text="next" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8fc7fc" height="274.0" layoutX="14.0" layoutY="69.0" stroke="#fcfcfc" strokeType="INSIDE" width="465.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="227.0" layoutY="119.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="236.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="227.0" layoutY="179.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="236.0" />
@@ -60,7 +59,7 @@
       <Text layoutX="234.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
       <Text layoutX="240.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID #:" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="219.0" layoutX="24.0" layoutY="89.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="197.0" />
-      <Button fx:id="return_button" layoutX="14.0" layoutY="434.0" mnemonicParsing="false" onAction="#switchToScene1" text="Return to menu" />
+      <Button fx:id="return_button" layoutX="204.0" layoutY="421.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="40.0" prefWidth="122.0" text="Return to menu" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="227.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="236.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#caeaff" height="27.0" layoutX="229.0" layoutY="208.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="48.0" />
       <Label fx:id="maj_label" layoutX="237.0" layoutY="243.0" text="Label">

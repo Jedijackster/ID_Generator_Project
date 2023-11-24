@@ -109,6 +109,8 @@ public class scene4Controller implements Initializable{
 		
 		String idString = Integer.toString(id1.id);
 		
+		functions.storeFaculty(id1);
+		
 		scene6Controller scene6Controller = loader.getController();
 		scene6Controller.displayFaculty(first_name, last_name, idString, professionString);
 		stage = (Stage)((Node)event.getSource()).getScene().getWindow();

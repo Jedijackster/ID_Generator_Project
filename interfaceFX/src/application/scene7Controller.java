@@ -30,6 +30,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
 public class scene7Controller {
+	
 	@FXML
 	public Stage stage;
 	@FXML
@@ -42,13 +43,21 @@ public class scene7Controller {
 	public TextField search_box;
 	
 	@FXML
-	public Label Name_label;
+	public Label Name_labelStudent;
 	@FXML
-	public Label ID_label;
+	public Label Name_labelFaculty;
 	@FXML
-	public Label Sex_label;
+	public Label ID_labelStudent;	
 	@FXML
-	public Label Age_label;
+	public Label ID_labelFaculty;
+	@FXML
+	public Label Sex_labelStudent;	
+	@FXML
+	public Label Sex_labelFaculty;
+	@FXML
+	public Label Age_labelStudent;
+	@FXML
+	public Label Age_labelFaculty;
 	@FXML
 	public Label Department_label;
 	@FXML
@@ -84,39 +93,56 @@ public class scene7Controller {
 		if (idValue!=0) {
 			int sOrf = (idValue/1000000000);
 			if (sOrf==1) {
-				String name = functions.getName(idInput);
-				System.getProperty("MY_STRING1", name);
-				Name_label.setText(name);
-				idTranslate(idValue);
-				ID_label.setText(idInput);
-				String ageString = System.getProperty("MY_INT1");
-				Age_label.setText(ageString);
-				String sexString = System.getProperty("MY_INT2");
-				Sex_label.setText(sexString);
-				String depString = System.getProperty("MY_INT3");
-				Department_label.setText(depString);
-				String gradOrundString = System.getProperty("MY_INT4");
-				gradOrund_label.setText(gradOrundString);
-				String academicYearString = System.getProperty("MY_INT5");
-				academicYear_label.setText(academicYearString);
-				
-				switchToScene8(event);
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene8.fxml"));	
+				root = loader.load();
+				scene7Controller controller = loader.getController();
 
-			}else if(sOrf==2) {
-				switchToScene9(event);
 				String name = functions.getName(idInput);
-				System.setProperty("MY_STRING1", name);
-				Name_label.setText("Jack Yohn");
+				controller.Name_labelStudent.setText(name);
+				/*String getName = Name_labelStudent.getText();
+				System.out.println(getName);*/
+				
 				idTranslate(idValue);
-				ID_label.setText(idInput);
+				controller.ID_labelStudent.setText(idInput);
 				String ageString = System.getProperty("MY_INT1");
-				Age_label.setText(ageString);
+				controller.Age_labelStudent.setText(ageString);
 				String sexString = System.getProperty("MY_INT2");
-				Sex_label.setText(sexString);
-				String jobString = System.getProperty("MY_INT6");
-				Job_label.setText(jobString);
-				String yearsWorkedString = System.getProperty("MY_INT7");
-				yearsWorked_label.setText(yearsWorkedString);
+				controller.Sex_labelStudent.setText(sexString);
+				String depString = System.getProperty("MY_INT3");
+				controller.Department_label.setText(depString);
+				String gradOrundString = System.getProperty("MY_INT4");
+				controller.gradOrund_label.setText(gradOrundString);
+				String academicYearString = System.getProperty("MY_INT5");
+				controller.academicYear_label.setText(academicYearString);
+				
+				stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+				scene = new Scene(root);
+				stage.setScene(scene);
+				stage.show();
+
+			}else if(sOrf!=1) {
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene9.fxml"));	
+				root = loader.load();
+				scene7Controller controller = loader.getController();
+				
+				String name = functions.getName(idInput);
+				controller.Name_labelFaculty.setText(name);
+				idTranslate(idValue);
+				controller.ID_labelFaculty.setText(idInput);
+				String ageString = System.getProperty("MY_INT1");
+				controller.Age_labelFaculty.setText(ageString);
+				String sexString = System.getProperty("MY_INT2");
+				controller.Sex_labelFaculty.setText(sexString);
+				String yearsWorkedString = System.getProperty("MY_INT6");
+				controller.yearsWorked_label.setText(yearsWorkedString);
+				String jobString = System.getProperty("MY_INT7");
+				controller.Job_label.setText(jobString);
+				
+				
+				stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+				scene = new Scene(root);
+				stage.setScene(scene);
+				stage.show();
 			}
 			
 			
@@ -152,42 +178,151 @@ public class scene7Controller {
 		System.setProperty("MY_INT1", ageString);
 		previous +=age;
 		int sex =((id%1000)-previous)/100;
-		String sexString = Integer.toString(sex);
+		String sexString = sexSelect(sex);
 		System.setProperty("MY_INT2", sexString);
 		previous+= (sex*100);
 		int sOrf= id/1000000000;
 		
 		if (sOrf==1) {
+			
+			
 			int dep = ((id%100000)-previous)/10000;
 			previous+= (dep*10000);
-			String depString = Integer.toString(dep);
-			System.setProperty("MY_INT3", depString);
 			previous+= (dep*10000);
+			String depString = depSelect(dep);
+			System.setProperty("MY_INT3", depString);
 			int gradOrund = ((id%1000000)-previous)/100000;
 			previous+= (gradOrund*100000);
-			String gradOrundString = Integer.toString(gradOrund);
+			String gradOrundString = gradOrundSelect(gradOrund);
 			System.setProperty("MY_INT4", gradOrundString);
 			int year = ((id%10000000)-previous)/1000000;
 			previous+= (year*1000000);
 			year = previous/1000000;
-			String yearString = Integer.toString(year);
+			String yearString = yearSelect(year);
 			System.setProperty("MY_INT5", yearString);
 			
-		}else if (sOrf==2) { 
-			int years = ((id%1000000)-previous)/10000;
+		}else if (sOrf!=1) { 
+			int years = ((id%10000)-previous)/1000;
+			previous+= (years*1000);
 			String workString = Integer.toString(years);
 			System.setProperty("MY_INT6", workString);
-			previous+= (years*10000);			
-			int job = ((id%10000000)-previous)/1000000;
+			int job = ((id%1000000)-previous)/100000;
 			previous+= (job*1000000);
-			job = previous/1000000;
-			String jobString = Integer.toString(job);
+			String jobString = jobSelect(job);
+			System.out.println(jobString);
 			System.setProperty("MY_INT7", jobString);
 		}
 		
 	}
 	
+	public String depSelect(int dep) {
+		String department ="";
+		
+		if (dep ==1) {
+			department ="College of Architechture";
+		}else if(dep ==2) {
+			department ="College of Business";
+		}else if(dep ==3) {
+			department ="College of Education";
+		}else if(dep ==4) {
+			department ="College of Engineering";
+		}else if(dep ==5) {
+			department ="College of Liberal Arts";
+		}else if(dep ==6) {
+			department ="College of Nursing and Health";
+		}else if(dep ==7) {
+			department ="College of Science";
+		}else if(dep ==8) {
+			department ="School of Social Work";
+		}
+		return department;
+	}
 	
+	public String sexSelect(int sex) {
+		String sexString = "";
+		if (sex ==1) {
+			sexString = "Male";
+		}else if(sex ==2) {
+			sexString = "Female";
+		}
+		
+		return sexString;
+	}
+
+	public String gradOrundSelect(int gradOrund) {
+		String gradOrundString = "";
+		
+		if (gradOrund ==1) {
+			gradOrundString = "Undergraduate student";
+		}else if (gradOrund ==2) { 
+			gradOrundString = "Graduate student";
+		}
+		
+		return gradOrundString;
+	}
+	
+	public String yearSelect(int year) {
+		String yearString = "";
+		
+		if (year ==1) {
+			yearString = "Freshman";
+		}else if (year==2) {
+			yearString = "Sophomore";
+		}else if (year==3) {
+			yearString = "Junior";
+		}else if (year==4) {
+			yearString = "Senior";
+		}
+		return yearString;
+	}
+	
+	public String jobSelect(int job) {
+		String jobString="";
+		if (job ==1) {
+			jobString = "Accountant";
+		}else if (job ==2) {
+			jobString = "Administrative Assistant";
+		}else if (job ==3) {
+			jobString ="Admissions Officer";
+		}else if (job ==4) {
+			jobString = "Athletic Coach";
+		}else if (job ==5) {
+			jobString = "Cafeteria Staff";
+		}else if (job ==6) {
+			jobString = "Career Counselor";
+		}else if (job ==7) {
+			jobString = "Event Planner";
+		}else if (job ==8) {
+			jobString = "Facilities Manager";
+		}else if (job ==9) {
+			jobString = "Financial Aid Counselor";
+		}else if (job ==10) {
+			jobString = "Groundskeeper";
+		}else if (job ==11) {
+			jobString = "Human Resources Manager";
+		}else if (job ==12) {
+			jobString = "IT Support Specialist";
+		}else if (job ==13) {
+			jobString = "Lab Technician";
+		}else if (job ==14) {
+			jobString = "Librarian";
+		}else if (job ==15) {
+			jobString = "Professor";
+		}else if (job ==16) {
+			jobString = "Public Relations Specialist";
+		}else if (job ==17) {
+			jobString = "Registrar";
+		}else if (job ==18) {
+			jobString = "Research Assistant";
+		}else if (job ==19) {
+			jobString = "Security Officer";
+		}else if (job ==20) {
+			jobString = "Student Affairs Coordinator";
+		}
+		
+		
+		return jobString;
+	}
 	
 	public void invalid_category(ActionEvent event) throws IOException{
 		

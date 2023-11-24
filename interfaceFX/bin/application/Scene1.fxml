@@ -25,9 +25,9 @@
          </fill>
       </Rectangle>
       <ButtonBar layoutX="324.0" layoutY="94.0" prefHeight="40.0" prefWidth="111.0" />
-    <Button fx:id="student_button" defaultButton="true" layoutX="318.0" layoutY="94.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="40.0" prefWidth="143.0" text="Create ID student" textFill="#3a9ad6">
+    <Button fx:id="student_button" defaultButton="true" layoutX="150.0" layoutY="144.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="57.0" prefWidth="195.0" text="Create ID student" textFill="#3a9ad6">
          <font>
-            <Font size="14.0" />
+            <Font size="20.0" />
          </font>
       </Button>
       <Line endX="429.0" layoutX="105.0" layoutY="49.0" startX="-141.0" strokeLineCap="BUTT" strokeWidth="5.0">
@@ -40,9 +40,9 @@
             </LinearGradient>
          </stroke>
       </Line>
-      <Text layoutX="324.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Options:" wrappingWidth="162.21630859375">
+      <Text layoutX="159.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Options:" wrappingWidth="180.75780722498894">
          <font>
-            <Font size="30.0" />
+            <Font size="48.0" />
          </font>
          <fill>
             <LinearGradient endX="0.5625" endY="0.46634615384615385" startX="0.5576923076923076" startY="0.23076923076923078">
@@ -77,9 +77,9 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Button fx:id="faculty_button" defaultButton="true" layoutX="318.0" layoutY="145.0" mnemonicParsing="false" onAction="#switchToScene4" prefHeight="40.0" prefWidth="143.0" text="Create ID faculty" textFill="#3a9ad6">
+      <Button fx:id="faculty_button" defaultButton="true" layoutX="150.0" layoutY="215.0" mnemonicParsing="false" onAction="#switchToScene4" prefHeight="57.0" prefWidth="195.0" text="Create ID faculty" textFill="#3a9ad6">
          <font>
-            <Font size="14.0" />
+            <Font size="20.0" />
          </font>
       </Button>
       <Button fx:id="image_button" defaultButton="true" layoutX="423.0" layoutY="539.0" mnemonicParsing="false" onAction="#switchToScene5" prefHeight="40.0" prefWidth="143.0" text="ID Card Image" textFill="#3a9ad6">
@@ -87,9 +87,9 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="search_button" defaultButton="true" layoutX="318.0" layoutY="202.0" mnemonicParsing="false" onAction="#switchToScene7" prefHeight="40.0" prefWidth="143.0" text="ID Search" textFill="#3a9ad6">
+      <Button fx:id="search_button" defaultButton="true" layoutX="150.0" layoutY="282.0" mnemonicParsing="false" onAction="#switchToScene7" prefHeight="57.0" prefWidth="195.0" text="ID Search" textFill="#3a9ad6">
          <font>
-            <Font size="14.0" />
+            <Font size="24.0" />
          </font>
       </Button>
    </children>
